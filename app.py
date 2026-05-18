@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, 
+render_template
 from flask_cors import CORS
 import mysql.connector
 
@@ -20,9 +21,11 @@ print("Database Connected")
 
 cursor = conn.cursor()
 
+from flask import render_template
+
 @app.route('/')
 def home():
-    return "Backend Running"
+    return render_template('index.html')
 
 @app.route('/register', methods=['POST'])
 def register():
