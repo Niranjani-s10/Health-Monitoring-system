@@ -4,13 +4,19 @@ import mysql.connector
 
 app = Flask(__name__)
 CORS(app)
+import mysql.connector
 
 conn = mysql.connector.connect(
-    host="localhost",
+    host="viaduct.proxy.rlwy.net",
     user="root",
-    password="Niranjani@10",
-    database="hospital_management_system"
+    password="dSAzQaOnMhInyIedWZTkpNFbGOktIVnK",
+    database="railway",
+    port=31842
 )
+
+cursor = conn.cursor()
+
+print("Database Connected")
 
 cursor = conn.cursor()
 
